@@ -1,0 +1,38 @@
+1. Classes          - class
+2. Encapsulation    - private
+3. Abstraction
+4. Inheritance      - extends
+5. Polymorphism     - overiding function in extends class
+6. Componsition
+
+ classes, inheritance, encapsulation, abstraction, polymorphism and composition.
+ These are all key concepts in the OOP world
+ 
+Below are the core concepts of OOP:
+
+1. Classes and Objects:
+
+Class: A blueprint or template for creating objects. It defines the properties and behaviors common to all objects of a certain kind.
+Object: An instance of a class. It represents a specific entity with its own unique state and behavior.
+
+2. Encapsulation(private):
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden.To achieve this, you must: declare class variables/attributes as private.
+Encapsulation is useful in cases where we need certain properties or methods for the inner working of the 
+object,but we don't want to expose that to the exterior. Having private properties/methods ensures we don't 
+"accidentally" expose information we don't want.
+
+3. Inheritance:
+Inheritance is useful for code reusability: reuse properties and methods of an existing class when you create a new class.
+
+4. Polymorphism:
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance. Polymorphism occurs in several forms:
+Method Overloading: Defining multiple methods with the same name but different parameters in the same class.
+Method Overriding: Redefining a method in a subclass that already exists in the superclass, providing a specific implementation for the subclass.
+
+5. Abstraction:
+Abstraction involves simplifying complex systems by representing essential features while hiding unnecessary details. In OOP, abstraction is achieved through abstract classes and interfaces, which define a blueprint for other classes to follow without specifying the implementation details. Abstract classes may contain both concrete and abstract methods, while interfaces define only method signatures without implementations.
+
+6. Composition:
+Composition is a more flexible way to create new objects than inheritance. This is because composition allows you to create objects from any other object, regardless of whether or not the two objects are related. Inheritance, on the other hand, only allows you to create objects from objects that are related to the parent object.
+
