@@ -74,3 +74,26 @@ function loop(){
 
  const q = assignMe; // its called assigning function to variable it you write it as assingMe() then it will give you function return value
  q(3,5); // It means calling a function
+
+ // Curry Function its like callback
+
+ function curried(x) {
+    return function(y) {
+      return x + y;
+    }
+  }
+
+  curried(1)(2)
+
+  // learn typeof instanceof Array.isArray(), isNAN
+
+  // can you guess the output of following logical if condition
+
+  var g=2, h=2,s=2;
+  if(g === h === s){
+    console.log('condition is true')
+  }else{
+    console.log('condition is false');
+  }
+
+  // output of the above question is false becuas g === h is true and true === s is false
