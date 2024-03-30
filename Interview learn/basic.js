@@ -39,6 +39,27 @@ someProm().then((res)=>{
 
 // Difference between deep copy and shallow copy
 
+/*Shallow copy creates a new object by copying the memory address of the original object. The memory addresses of the elements remain the same.
+Deep copy, on the other hand, creates a new object where every value gets a new memory address. It’s a bit-wise copy that ensures no shared references.
+
+The spread operator behaves differently based on whether the data is nested or not:
+For non-nested data, it deep copies.
+For nested data, it deep copies the top-level data and shallow copies the nested data. */
+
+// Example :
+//nested means shallow copy one will override other(shared memory space)
+const oldObj = { a: { b: 10 } };
+const newObj = { ...oldObj };
+
+oldObj.a.b = 2;
+console.log(oldObj ,"newObj --->", newObj)
+
+// Deep Copy means take different space in memory
+const obj1 = { a: 3 };
+const newObjOne = { ...obj1 };
+newObjOne.a =4
+console.log(obj1,"newObjOne 1 --->", newObjOne)
+
 // definition of useCallback in react.
 
 function loop(){
