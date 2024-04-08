@@ -20,6 +20,41 @@ var a1 =['first', 'second']
 var b1 = a1;
 b1.push('third')
 
+// Difference between deep copy and shallow copy
+
+/*Shallow copy creates a new object by copying the memory address of the original object. The memory addresses of the elements remain the same.
+Deep copy, on the other hand, creates a new object where every value gets a new memory address. It’s a bit-wise copy that ensures no shared references.
+
+
+When you create below values, they are tightly coupled with the variable they are assigned to. They only exist once. That means you do not really have 
+to worry about copying primitive data types in JavaScript. When you make a copy, it will be a real copy. 
+Number — e.g. 1
+String — e.g. 'Hello'
+Boolean — e.g. true
+undefined
+null
+---------------------------------
+The spread operator behaves differently based on whether the data is nested or not:
+For non-nested data, it deep copies.
+For nested data, it deep copies the top-level data and shallow copies the nested data. */
+
+// Example :
+//nested means shallow copy one will override other(shared memory space)
+// For more detail visit 
+//https://www.freecodecamp.org/news/copying-stuff-in-javascript-how-to-differentiate-between-deep-and-shallow-copies-b6d8c1ef09cd/
+const oldObj = { a: { b: 10 } };
+const newObj = { ...oldObj };
+
+oldObj.a.b = 2;
+console.log(oldObj ,"newObj --->", newObj)
+
+// Deep Copy means take different space in memory
+const obj1 = { a: 3 };
+const newObjOne = { ...obj1 };
+newObjOne.a =4
+console.log(obj1,"newObjOne 1 --->", newObjOne)
+
+
 // Difference between Promise.all() and allsetealed
 
 // what is the output of .then and see the output value as well.
@@ -37,28 +72,6 @@ someProm().then((res)=>{
     console.log('third', res)
 })
 
-// Difference between deep copy and shallow copy
-
-/*Shallow copy creates a new object by copying the memory address of the original object. The memory addresses of the elements remain the same.
-Deep copy, on the other hand, creates a new object where every value gets a new memory address. It’s a bit-wise copy that ensures no shared references.
-
-The spread operator behaves differently based on whether the data is nested or not:
-For non-nested data, it deep copies.
-For nested data, it deep copies the top-level data and shallow copies the nested data. */
-
-// Example :
-//nested means shallow copy one will override other(shared memory space)
-const oldObj = { a: { b: 10 } };
-const newObj = { ...oldObj };
-
-oldObj.a.b = 2;
-console.log(oldObj ,"newObj --->", newObj)
-
-// Deep Copy means take different space in memory
-const obj1 = { a: 3 };
-const newObjOne = { ...obj1 };
-newObjOne.a =4
-console.log(obj1,"newObjOne 1 --->", newObjOne)
 
 // definition of useCallback in react.
 
@@ -100,11 +113,13 @@ function loop(){
 
  function curried(x) {
     return function(y) {
-      return x + y;
+      return function(z){
+        return x + y + z
+      }
     }
   }
 
-  curried(1)(2)
+  curried(1)(2)(3)
 
   // learn typeof instanceof Array.isArray(), isNAN
 
