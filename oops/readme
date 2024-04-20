@@ -17,7 +17,7 @@ Object: An instance of a class. It represents a specific entity with its own uni
 
 2. Encapsulation(private):
 
-The meaning of Encapsulation, is to make sure that "sensitive" data is hidden.To achieve this, you must: declare class variables/attributes as private.
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden.To achieve this, we must: declare class variables/attributes as private.
 Encapsulation is useful in cases where we need certain properties or methods for the inner working of the 
 object,but we don't want to expose that to the exterior. Having private properties/methods ensures we don't 
 "accidentally" expose information we don't want.
@@ -31,6 +31,7 @@ Method Overloading: Defining multiple methods with the same name but different p
 Method Overriding: Redefining a method in a subclass that already exists in the superclass, providing a specific implementation for the subclass.
 
 5. Abstraction:
+An abstract class is a class that cannot be instantiated.
 Abstraction involves simplifying complex systems by representing essential features while hiding unnecessary details. In OOP, abstraction is achieved through abstract classes and interfaces, which define a blueprint for other classes to follow without specifying the implementation details. Abstract classes may contain both concrete and abstract methods, while interfaces define only method signatures without implementations.
 
 6. Composition:

@@ -1,5 +1,5 @@
 
-// what is the output of a
+// 1.  what is the output of a
 var a;
 function some(){
     var a =10;
@@ -7,7 +7,7 @@ function some(){
 
 console.log(a)
 
-// what is the output of c and d
+// 2. what is the output of c and d
 var c =1;
 var d = c;
 d = 5
@@ -15,12 +15,12 @@ console.log(c)
 console.log(d)
 
 
-// what is the output of a1 and b1
+// 3. what is the output of a1 and b1
 var a1 =['first', 'second']
 var b1 = a1;
 b1.push('third')
 
-// Difference between deep copy and shallow copy
+// 4. Difference between deep copy and shallow copy
 
 /*Shallow copy creates a new object by copying the memory address of the original object. The memory addresses of the elements remain the same.
 Deep copy, on the other hand, creates a new object where every value gets a new memory address. It’s a bit-wise copy that ensures no shared references.
@@ -48,6 +48,12 @@ const newObj = { ...oldObj };
 oldObj.a.b = 2;
 console.log(oldObj ,"newObj --->", newObj)
 
+var k = {"a":'helo', "b":'cat'};
+var z = k;
+z.a="yo";
+console.log(k,'<--k z--->',z)
+// the above will overide k as well 
+
 // Deep Copy means take different space in memory
 const obj1 = { a: 3 };
 const newObjOne = { ...obj1 };
@@ -55,10 +61,10 @@ newObjOne.a =4
 console.log(obj1,"newObjOne 1 --->", newObjOne)
 
 
-// Difference between Promise.all() and allsetealed
+// 5. Difference between Promise.all() and allsetealed
 
 // what is the output of .then and see the output value as well.
-const someProm = ()=>new Promise((res) =>{
+var someProm = ()=>new Promise((res) =>{
     res('Done')
 })
 // try uncommeting the below code  as well
@@ -74,6 +80,8 @@ someProm().then((res)=>{
 
 
 // definition of useCallback in react.
+//When you optimize rendering performance, you will sometimes need to cache the functions that you pass to
+// child components. 
 
 function loop(){
     for(var i =0;i<5;i++){
@@ -98,6 +106,31 @@ function loop(){
  // ui
 
  // debounce and throwtlink
+
+/* In JavaScript, a debounce function is used to limit the frequency of execution of a particular function. 
+It ensures that a function is only called after a certain amount of time. it help to improve performance */
+ 
+// ---------------Debounce In React ------------
+// timeoutId = useRef(null);
+let timeoutId   // for plan js will declare 
+function debounce(func, delay){
+  return (...args) =>{
+
+     clearTimeout(timeoutId) // incase of useRef timoutId.current instead of timeoutId
+     timeoutId =setTimeout(()=>{
+      func(args);
+     }, delay);
+
+  }
+}
+const handleSearch =(value)=> console.log(value,'this is the excecution');
+const debounceSearch = debounce(handleSearch, 2000); // this is returning function (...args)
+const handleChanged =(e)=>{
+  const {value} = e.target;
+  debounceSearch(value)
+}
+
+
  // IIFE (Immediately Invoked Function Expressions)
 
  // assigning and calling function
